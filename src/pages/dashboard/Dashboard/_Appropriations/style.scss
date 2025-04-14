@@ -1,0 +1,92 @@
+.appropriations {
+  container-type: inline-size;
+
+  & > .ant-card-body {
+    padding: 16px 6px !important;
+    row-gap: 8px !important;
+  }
+
+  .appropriations__header {
+    padding: 0 10px;
+  }
+
+  .appropriations__body {
+    flex-grow: 1;
+    padding: 8px 18px 8px 10px;
+
+    .appropriation-card {
+      border: 1px solid #f0f0f0;
+      box-shadow:
+        0px 2px 4px 0px #00000005,
+        0px 1px 6px -1px #00000005,
+        0px 1px 2px 0px #00000008;
+      transition: box-shadow 0.4s ease;
+
+      &:hover {
+        box-shadow:
+          0px 2px 10px 0px #00000005,
+          0px 1px 12px -1px #00000005,
+          0px 1px 8px 0px #00000008;
+      }
+
+      &-skeleton {
+        .ant-skeleton:has(.ant-skeleton-input) {
+          height: 18px;
+
+          .ant-skeleton-input {
+            height: 100%;
+          }
+        }
+      }
+
+      .ant-collapse-header {
+        align-items: center;
+
+        .ant-tag {
+          margin-left: auto !important;
+        }
+      }
+
+      .ant-collapse-content {
+        border-top: 1px solid #f0f0f0;
+        padding: 12px;
+
+        .overall-grade {
+          animation: pulse 2s infinite;
+        }
+
+        .dashed-list .list__value {
+          width: auto;
+        }
+
+        @container (max-width:250px) {
+          .dashed-list {
+            .list__row {
+              flex-direction: column;
+
+              .dashed-border {
+                display: none;
+              }
+
+              .list__item {
+                flex: 1;
+              }
+
+              .list__label {
+                margin-right: auto;
+              }
+
+              .list__value {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        .ant-collapse-content-box {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
