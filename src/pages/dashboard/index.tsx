@@ -1,5 +1,4 @@
 import { RightOutlinedSVG } from '@/assets/icon';
-import Loading from '@/components/Common/Loading';
 import { Navbar } from '@/components/Navbar/Navbar';
 import NavbarBottom from '@/components/Navbar/NavbarBottom';
 import useNavbarList from '@/components/Navbar/useNavbarList';
@@ -262,7 +261,7 @@ export const Dashboard = () => {
           )}
         </div>
         <div className={`dashboard__body`}>
-          {isLoading && <Loading />}
+          {/* {isLoading && <Loading />} */}
           <Flex
             className="dashboard__header upper-element"
             justify="space-between"
