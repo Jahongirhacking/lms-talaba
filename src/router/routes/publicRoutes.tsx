@@ -6,7 +6,6 @@ import GetContract from '@/pages/auth/GetContract';
 import GetDiplom from '@/pages/auth/GetDiplom';
 import LoginPage from '@/pages/auth/Login';
 import RootLayout from '@/pages/auth/RootLayout';
-import StatisticsDashboard from '@/pages/auth/StatisticsDashboard';
 import HelpPage from '@/pages/dashboard/Help/HelpPage';
 import { paths } from '../paths';
 
@@ -44,9 +43,5 @@ export const publicRoutes: RouteObject[] = [
         element: <CallbackPage />,
       },
     ],
-  },
-  {
-    path: paths.statisticsDashboard,
-    element: <StatisticsDashboard />,
   },
 ];

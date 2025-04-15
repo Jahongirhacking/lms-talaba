@@ -2,8 +2,7 @@ import {
   CancelPasswordSVG,
   CheckDiplomSVG,
   GetContractSVG,
-  LoginIconSVG,
-  StatisticsSVG,
+  LoginIconSVG
 } from '@/assets/icon';
 import { paths } from '@/router/paths';
 import { ReactElement, useEffect, useState } from 'react';
@@ -40,11 +39,6 @@ const useOptions = (): IExtraOptions[] => {
         icon: <GetContractSVG />,
         label: t('login.extra_options.get_contract_text'),
         link: paths.getContract,
-      },
-      {
-        icon: <StatisticsSVG />,
-        label: t('login.extra_options.statistics_dashboard_text'),
-        link: paths.statisticsDashboard,
       },
     ]);
   }, []);
