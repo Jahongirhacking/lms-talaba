@@ -29,7 +29,6 @@ export const DashboardPage = () => {
         gap={16}
         wrap
       >
-        <h2 className="section_title">{t('dashboard.dashboard_page.title')}</h2>
         <Flex className="dashboard-controls">
           <Button
             type="primary"

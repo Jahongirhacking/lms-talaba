@@ -171,6 +171,10 @@
   position: relative;
   overflow: hidden;
 
+  .dashboard-layout {
+    gap: 15px;
+  }
+
   .ant-tag {
     margin: 0;
   }

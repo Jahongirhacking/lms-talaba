@@ -1,5 +1,3 @@
-import GenerateSkeleton from '@/components/Skeletons/GenerateSkeleton';
-import SubjectCardSkeleton from '@/components/Skeletons/SubjectCardSkeleton';
 import {
   useGetSubjectIDMutation,
   useGetSubjectsMutation,
@@ -7,16 +5,16 @@ import {
 import { ISubject, ISubjects } from '@/services/dashboard/type';
 import { ISemestr } from '@/services/users/type';
 import { RootState } from '@/store/store';
-import { CheckCircleFilled } from '@ant-design/icons';
-import { Card, Empty, Flex, Progress, Skeleton, Spin, Typography } from 'antd';
+import { Card, Flex, Image, Progress, Typography } from 'antd';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import DashboardLayout from '../components/DashboardLayout';
 import './Subjects.scss';
 
 export const SubjectsPage = () => {
-  const [getSubjectList, { data: subjectList, isLoading }] =
+  const [getSubjectList, { data: subjectList }] =
     useGetSubjectsMutation();
   const [subjects, setSubjects] = useState<Map<string, ISubject>>(new Map());
   const [getSubjectId] = useGetSubjectIDMutation();
@@ -59,17 +57,70 @@ export const SubjectsPage = () => {
   }, [subjectList]);
 
   return (
-    <section className="section dashboard__outlet upper-element">
-      <h2 className="section_title">{t('dashboard.subjects_page.title')}</h2>
-      <div className="dashboard__outlet--content">
-        <Flex
-          className="subjects__card-wrapper"
-          wrap
-          align="flex-start"
-          gap={24}
-          key={currentSemester?.code}
-        >
-          {!isLoading && currentSemester ? (
+    <DashboardLayout title={t('dashboard.subjects_page.title')}>
+      <section className="section dashboard__outlet upper-element">
+        <div className="dashboard__outlet--content">
+          <Flex
+            className="subjects__card-wrapper"
+            wrap
+            align="flex-start"
+            gap={24}
+            key={currentSemester?.code}
+          >
+            <Link
+              key={0}
+              className="subject-link"
+              to={`/dashboard/subjects/1`}
+            >
+              <Card className="subjects__card" hoverable>
+                <Flex
+                  vertical
+                  gap={12}
+                  justify="space-between"
+                  style={{ minHeight: '144px' }}
+                >
+                  <Image src='/images/example_subject.jpg' preview={false} />
+                  <Flex className="subject-info" vertical>
+                    <Typography.Title level={4}>
+                      Ma'lumotlar bazasi
+                    </Typography.Title>
+                    <Flex className="dashboard__details-list">
+                      <Typography.Text>
+                        Majburiy
+                      </Typography.Text>
+                      <Typography.Text>
+                        120{' '}
+                        {t('const.hours_plural')}
+                      </Typography.Text>
+                      <Typography.Text>
+                        {Number(6).toFixed(1)}{' '}
+                        {6 > 1
+                          ? t('const.credit_plural')
+                          : t('const.credit_singular')}
+                      </Typography.Text>
+                    </Flex>
+                  </Flex>
+
+                  <Flex
+                    className="subject__task-completion"
+                    align="flex-end"
+                    wrap
+                    style={{ rowGap: '10px', columnGap: '20px' }}
+                  >
+                    <Progress
+                      percent={80}
+                      style={{ flex: 1, minWidth: '160px' }}
+                      strokeColor={{
+                        '0%': '#108ee9',
+                        '100%': '#87d068',
+                      }}
+                    />
+                  </Flex>
+                </Flex>
+              </Card>
+            </Link>
+
+            {/* {!isLoading && currentSemester ? (
             <>
               {subjectList && subjectList.data?.length > 0 ? (
                 subjectList.data.map((subject, index) => {
@@ -182,9 +233,10 @@ export const SubjectsPage = () => {
             <GenerateSkeleton numberOfRepetition={4}>
               <SubjectCardSkeleton />
             </GenerateSkeleton>
-          )}
-        </Flex>
-      </div>
-    </section>
+          )} */}
+          </Flex>
+        </div>
+      </section>
+    </DashboardLayout>
   );
 };

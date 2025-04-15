@@ -27,7 +27,7 @@ export const privateRoutes: RouteObject[] = [
     children: [
       {
         path: '/dashboard',
-        element: <DashboardPage />,
+        element: <DashboardPage />
       },
       {
         path: 'timetable',
