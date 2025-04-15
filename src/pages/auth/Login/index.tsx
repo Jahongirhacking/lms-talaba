@@ -2,9 +2,9 @@ import { NiceGuySmileEmoji } from '@/assets/emojis';
 import { LeftArrowSVG } from '@/assets/icon';
 import ControlledFlow from '@/components/ControlledFlow';
 import BottomInfoMessage from '@/components/SpecialComponents/BottomInfoMessage';
-import { IBaseDataRes } from '@/services/type';
 import { useLoginMutation } from '@/services/users';
-import { ILogin, ILoginRes } from '@/services/users/type';
+import { ILogin } from '@/services/users/type';
+import { register } from '@/store/slices/authSlice';
 import { RootState } from '@/store/store';
 import { localStorageNames } from '@/utils/storageFunc';
 import { toFirstLowerLetter } from '@/utils/stringFunc';
@@ -19,7 +19,7 @@ import { Button, Divider, Flex, Form, message, Typography } from 'antd';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import '../style.scss';
 import StudentForm from './StudentForm';
@@ -33,19 +33,24 @@ const LoginPage = () => {
     (store: RootState) => store.authSlice
   );
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  console.log(login);
 
   const submit = async (data: ILogin) => {
     if (!isLoading) {
-      const res = await login({ login: data.login, password: data.password });
-      if (
-        'error' in res &&
-        res.error &&
-        'data' in res.error &&
-        res.error.data &&
-        (res.error.data as IBaseDataRes<ILoginRes>).success === false
-      ) {
-        setIsUnsuccessfulAttempt(true);
-      }
+      // const res = await login({ login: data.login, password: data.password });
+      // if (
+      //   'error' in res &&
+      //   res.error &&
+      //   'data' in res.error &&
+      //   res.error.data &&
+      //   (res.error.data as IBaseDataRes<ILoginRes>).success === false
+      // ) {
+      //   setIsUnsuccessfulAttempt(true);
+      // }
+      console.log(data);
+      dispatch(register("hello"))
     }
   };
 

@@ -73,10 +73,10 @@ const authSlice = createSlice({
           action.payload.data.token
         );
       })
-      .addMatcher(authApi.endpoints.login.matchRejected, state => {
-        state.access = undefined;
-        state.isLogged = false;
-      })
+      // .addMatcher(authApi.endpoints.login.matchRejected, state => {
+      //   state.access = undefined;
+      //   state.isLogged = false;
+      // })
       .addMatcher(
         authApi.endpoints.getProfile.matchFulfilled,
         (state, action) => {

@@ -9,10 +9,9 @@ import {
   useGetSemestrMutation,
 } from '@/services/users';
 import {
-  logout,
   setCurrentSemester,
   setMobileNavBottom,
-  setStateIsMobile,
+  setStateIsMobile
 } from '@/store/slices/authSlice';
 import { toggleThemeColor } from '@/store/slices/themeSlice';
 import { RootState } from '@/store/store';
@@ -27,19 +26,16 @@ import {
   Avatar,
   Breadcrumb,
   Button,
-  Flex,
-  message,
-  Modal,
-  Select,
+  Flex, Select,
   Spin,
   Switch,
   Tooltip,
-  Typography,
+  Typography
 } from 'antd';
 import { t } from 'i18next';
 import React, { createContext, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import './main.scss';
 
 interface IDashboardContext {
@@ -61,7 +57,7 @@ export const DashboardContext = createContext<IDashboardContext>(null);
 export const Dashboard = () => {
   const MOBILE_SIZE = 670;
   const location = useLocation();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const pathNames = location.pathname.split('/').filter(name => name);
   const dispatch = useDispatch();
   const semestrs = useSelector((store: RootState) => store.authSlice?.semestrs);
@@ -88,23 +84,25 @@ export const Dashboard = () => {
     useState<ISemesterSelectProp | null>(null);
   const { navbarList } = useNavbarList();
   const [isLoading, setIsLoading] = useState(true);
-  const [noResponseFromServer, setNoResponseFromServer] = useState(false);
+  // const [noResponseFromServer, setNoResponseFromServer] = useState(false);
 
   const onSemesterChange = (semester: ISemesterSelectProp) => {
     setActiveSemester(semester);
   };
 
+  console.error(error);
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const errorRes: any = error;
+  // const errorRes: any = error;
 
   // Expired token
-  useEffect(() => {
-    if (errorRes?.status === 403) {
-      navigate('/');
-      dispatch(logout());
-      message.warning(t('dashboard.expired_token_text'));
-    }
-  }, [dispatch, errorRes, navigate]);
+  // useEffect(() => {
+  //   if (errorRes?.status === 403) {
+  //     navigate('/');
+  //     dispatch(logout());
+  //     message.warning(t('dashboard.expired_token_text'));
+  //   }
+  // }, [dispatch, errorRes, navigate]);
 
   // Fetch data
   useEffect(() => {
@@ -129,7 +127,7 @@ export const Dashboard = () => {
     // if no response from server
     const intervalId = setInterval(() => {
       if (!currentSemesterRef.current) {
-        setNoResponseFromServer(true);
+        // setNoResponseFromServer(true);
       }
     }, 15000);
     if (!currentSemester) return;
@@ -139,7 +137,7 @@ export const Dashboard = () => {
       setTimeout(() => {
         setIsLoading(false);
       }, 1000);
-      setNoResponseFromServer(false);
+      // setNoResponseFromServer(false);
     }
 
     setActiveSemester({
@@ -154,26 +152,26 @@ export const Dashboard = () => {
   }, [currentSemester]);
 
   // nor response
-  useEffect(() => {
-    if (noResponseFromServer) {
-      Modal.warning({
-        title: t('off_topic.no_response_server_title'),
-        content: t('off_topic.no_response_server_content'),
-        onCancel() {
-          localStorage.removeItem(localStorageNames.HEMIS_TOKEN);
-          localStorage.removeItem(localStorageNames.university);
-          localStorage.removeItem(localStorageNames.universityApi);
-          window.location.href = '/';
-        },
-        onOk() {
-          setNoResponseFromServer(false);
-        },
-        cancelText: t('const.yes'),
-        okText: t('const.no'),
-        okCancel: true,
-      });
-    }
-  }, [noResponseFromServer]);
+  // useEffect(() => {
+  //   if (noResponseFromServer) {
+  //     Modal.warning({
+  //       title: t('off_topic.no_response_server_title'),
+  //       content: t('off_topic.no_response_server_content'),
+  //       onCancel() {
+  //         localStorage.removeItem(localStorageNames.HEMIS_TOKEN);
+  //         localStorage.removeItem(localStorageNames.university);
+  //         localStorage.removeItem(localStorageNames.universityApi);
+  //         window.location.href = '/';
+  //       },
+  //       onOk() {
+  //         setNoResponseFromServer(false);
+  //       },
+  //       cancelText: t('const.yes'),
+  //       okText: t('const.no'),
+  //       okCancel: true,
+  //     });
+  //   }
+  // }, [noResponseFromServer]);
 
   // dispatch active semester
   useEffect(() => {

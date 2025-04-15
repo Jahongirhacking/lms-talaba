@@ -1,4 +1,3 @@
-import { localStorageNames } from '@/utils/storageFunc';
 import type { Middleware } from '@reduxjs/toolkit';
 import { isRejectedWithValue } from '@reduxjs/toolkit';
 import { message } from 'antd';
@@ -16,23 +15,23 @@ export const rtkQueryErrorLogger: Middleware =
     const errors = action.payload?.data?.errors ?? action.payload?.data ?? '';
 
     if (isRejectedWithValue(action)) {
-      const error_message =
-        action.payload?.data?.message ??
-        action.payload?.data?.msg ??
-        action.payload?.data?.err?.message ??
-        action.payload?.data?.error ??
-        '';
+      // const error_message =
+      //   action.payload?.data?.message ??
+      //   action.payload?.data?.msg ??
+      //   action.payload?.data?.err?.message ??
+      //   action.payload?.data?.error ??
+      //   '';
 
-      if (error_message && error_message !== 'A validation error occurred.') {
-        message.warning(error_message);
-        if (
-          error_message ===
-          'Your request was made with invalid or expired JSON Web Token.'
-        ) {
-          localStorage.removeItem(localStorageNames.HEMIS_TOKEN);
-          window.location.href = '/';
-        }
-      }
+      // if (error_message && error_message !== 'A validation error occurred.') {
+      //   message.warning(error_message);
+      //   if (
+      //     error_message ===
+      //     'Your request was made with invalid or expired JSON Web Token.'
+      //   ) {
+      //     localStorage.removeItem(localStorageNames.HEMIS_TOKEN);
+      //     window.location.href = '/';
+      //   }
+      // }
 
       if (errors.length > 0) {
         errors?.forEach((item: string) => {
