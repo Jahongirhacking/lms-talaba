@@ -1,7 +1,7 @@
 import { type ReactNode, Suspense } from 'react';
 
-import { Spinner } from '@/components/Spinner';
+import Loading from '@/components/Common/Loading';
 
 export default function Wrapper({ children }: { children: ReactNode }) {
-  return <Suspense fallback={<Spinner />}>{children}</Suspense>;
+  return <Suspense fallback={<Loading />}>{children}</Suspense>;
 }
