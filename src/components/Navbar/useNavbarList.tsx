@@ -1,14 +1,9 @@
 import {
   BookIconSVG,
-  CalendarIconSVG,
-  DashboardIconSVG,
-  DocumentIconSVG, FolderIconSVG, HelpIconSVG,
-  LibraryIconSVG,
+  CalendarIconSVG, ContractMenuIcon, DocumentsMenuIcon, EduProcessMenuIcon, HelpIconSVG, LibraryMenuIcon,
   LogOutIconSVG,
-  MoneyIconSVG,
-  PlanIconSVG,
-  RestoreIconSVG,
-  SettingIconSVG
+  MainMenuIcon, PlanIconSVG,
+  ReEduMenuIcon, SettingIconSVG
 } from '@/assets/icon';
 import { ReactElement, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -31,7 +26,7 @@ const useNavbarList = () => {
         title: (
           t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
         )[0],
-        icon: <DashboardIconSVG />,
+        icon: <MainMenuIcon />,
         path: '/dashboard',
         isPrivatePath: true,
       },
@@ -55,7 +50,7 @@ const useNavbarList = () => {
         title: (
           t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
         )[3],
-        icon: <DocumentIconSVG />,
+        icon: <EduProcessMenuIcon />,
         path: '/dashboard/eduplan',
         isPrivatePath: true,
       },
@@ -72,14 +67,14 @@ const useNavbarList = () => {
         title: (
           t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
         )[6],
-        icon: <RestoreIconSVG />,
+        icon: <ReEduMenuIcon />,
         path: '/dashboard/reeducation',
       },
       {
         title: (
           t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
         )[8],
-        icon: <LibraryIconSVG />,
+        icon: <LibraryMenuIcon />,
         path: '/dashboard/library',
         isPrivatePath: false,
       },
@@ -87,14 +82,14 @@ const useNavbarList = () => {
         title: (
           t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
         )[5],
-        icon: <MoneyIconSVG />,
+        icon: <ContractMenuIcon />,
         path: '/dashboard/payment',
       },
       {
         title: (
           t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
         )[7],
-        icon: <FolderIconSVG />,
+        icon: <DocumentsMenuIcon />,
         path: '/dashboard/folders',
         isPrivatePath: true,
       },

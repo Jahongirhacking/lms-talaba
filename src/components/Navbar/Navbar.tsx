@@ -118,7 +118,7 @@ export const Navbar = () => {
           <Flex
             className={`navbar__item ${pathLocation.pathname == item.path ? 'navbar__item-active' : ''
               }`}
-            gap={8}
+            gap={12}
             key={item.title}
             // check restricted university click
             onClick={() =>
@@ -142,7 +142,7 @@ export const Navbar = () => {
         {navbarBottom.map((item, index) => (
           <Flex
             className={`navbar__item ${pathLocation.pathname == item.path ? 'navbar__item-active' : ''}`}
-            gap={8}
+            gap={12}
             key={item.title}
             onClick={() => handleClickSubItem({ path: item?.path, index })}
           >

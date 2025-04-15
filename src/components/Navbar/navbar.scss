@@ -6,7 +6,11 @@
     font-weight: 600;
   }
   svg path {
-    fill: #163300 !important;
+    stroke: #163300 !important;
+    &.filled {
+      stroke: none !important;
+      fill: #163300 !important;
+    }
   }
   &::after {
     content: '';
