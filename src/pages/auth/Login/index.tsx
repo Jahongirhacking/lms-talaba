@@ -6,7 +6,7 @@ import { IBaseDataRes } from '@/services/type';
 import { useLoginMutation } from '@/services/users';
 import { ILogin, ILoginRes } from '@/services/users/type';
 import { RootState } from '@/store/store';
-import { getLocalStorage, localStorageNames } from '@/utils/storageFunc';
+import { localStorageNames } from '@/utils/storageFunc';
 import { toFirstLowerLetter } from '@/utils/stringFunc';
 import {
   BarChartOutlined,
@@ -15,7 +15,7 @@ import {
   LoginOutlined,
   PlusCircleOutlined,
 } from '@ant-design/icons';
-import { Button, Divider, Flex, Form, message, Steps, Typography } from 'antd';
+import { Button, Divider, Flex, Form, message, Typography } from 'antd';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
@@ -23,12 +23,9 @@ import { useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import '../style.scss';
 import StudentForm from './StudentForm';
-import UniversityForm from './UniversityForm';
 
 const LoginPage = () => {
-  const [step, setStep] = useState(
-    getLocalStorage(localStorageNames.universityApi) ? 1 : 0
-  );
+  const [step, setStep] = useState(0);
   const [isUnsuccessfulAttempt, setIsUnsuccessfulAttempt] = useState(false);
   const [form] = Form.useForm();
   const [login, { error, isSuccess, isLoading }] = useLoginMutation();
@@ -79,21 +76,21 @@ const LoginPage = () => {
   return (
     <>
       <Helmet>
-        <title>MY.HEMIS.UZ - Kirish</title>
+        <title>LMS - Kirish</title>
         <meta
           name="description"
-          content="OTM tomonidan berilgan shaxsiy login va parol orqali HEMIS tizimiga kirish. HEMIS - Oliy ta’lim jarayonlarini boshqarish axborot tizimi. Ushbu tizim Oliy ta’lim muassasalari uchun ma’muriy boshqaruv, o‘quv jarayoni, ilmiy faoliyat, va moliyaviy boshqaruv modullarini taqdim etadi. 226 dan ortiq OTM va 1 milliondan ortiq foydalanuvchilar (talabalar va o‘qituvchilar) tomonidan qo‘llaniladi."
+          content="OTM tomonidan berilgan shaxsiy login va parol orqali LMS tizimiga kirish. LMS - Oliy ta’lim jarayonlarini boshqarish axborot tizimi. Ushbu tizim Oliy ta’lim muassasalari uchun ma’muriy boshqaruv, o‘quv jarayoni, ilmiy faoliyat, va moliyaviy boshqaruv modullarini taqdim etadi. 226 dan ortiq OTM va 1 milliondan ortiq foydalanuvchilar (talabalar va o‘qituvchilar) tomonidan qo‘llaniladi."
         />
         <meta
           name="keywords"
-          content="HEMIS, Oliy ta’lim tizimi, boshqarish axborot tizimi, ma’muriy boshqaruv, o‘quv jarayoni, ilmiy faoliyat, moliyaviy boshqaruv, OTM, talaba axborot tizimi, o‘qituvchi axborot tizimi, oliy ta’lim boshqaruvi, HEMIS yo‘riqnoma, Oliy ta’lim muassasalari, my hemis, hemis kirish, my.hemis.uz kirish, my hemis kirish"
+          content="LMS, Oliy ta’lim tizimi, boshqarish axborot tizimi, ma’muriy boshqaruv, o‘quv jarayoni, ilmiy faoliyat, moliyaviy boshqaruv, OTM, talaba axborot tizimi, o‘qituvchi axborot tizimi, oliy ta’lim boshqaruvi, LMS yo‘riqnoma, Oliy ta’lim muassasalari, my LMS, LMS kirish, my.LMS.uz kirish, my LMS kirish"
         />
-        <meta property="og:title" content="MY.HEMIS.UZ" />
+        <meta property="og:title" content="MY.LMS.UZ" />
         <meta
           property="og:description"
-          content="OTM tomonidan berilgan shaxsiy login va parol orqali HEMIS tizimiga kirish. HEMIS - Oliy ta’lim jarayonlarini boshqarish axborot tizimi. Ushbu tizim Oliy ta’lim muassasalari uchun ma’muriy boshqaruv, o‘quv jarayoni, ilmiy faoliyat, va moliyaviy boshqaruv modullarini taqdim etadi. 226 dan ortiq OTM va 1 milliondan ortiq foydalanuvchilar (talabalar va o‘qituvchilar) tomonidan qo‘llaniladi."
+          content="OTM tomonidan berilgan shaxsiy login va parol orqali LMS tizimiga kirish. LMS - Oliy ta’lim jarayonlarini boshqarish axborot tizimi. Ushbu tizim Oliy ta’lim muassasalari uchun ma’muriy boshqaruv, o‘quv jarayoni, ilmiy faoliyat, va moliyaviy boshqaruv modullarini taqdim etadi. 226 dan ortiq OTM va 1 milliondan ortiq foydalanuvchilar (talabalar va o‘qituvchilar) tomonidan qo‘llaniladi."
         />
-        <meta property="og:image" content="/images/hemis-icon.svg" />
+        <meta property="og:image" content="/images/lms-icon.svg" />
       </Helmet>
       <Flex justify="space-between" gap={24} style={{ marginBottom: '8px' }}>
         {step !== 0 && (
@@ -104,14 +101,14 @@ const LoginPage = () => {
             <LeftArrowSVG />
           </Button>
         )}
-        <Steps
+        {/* <Steps
           progressDot
           current={step}
           className="login__main--steps"
           items={(t('login.steps', { returnObjects: true }) as string[]).map(
             title => ({ title })
           )}
-        />
+        /> */}
       </Flex>
 
       <ControlledFlow
@@ -120,7 +117,7 @@ const LoginPage = () => {
         onSubmit={submit}
         data={{}}
       >
-        <UniversityForm />
+        {/* <UniversityForm /> */}
         <StudentForm isLoading={isLoading} />
       </ControlledFlow>
 
@@ -191,7 +188,7 @@ const LoginPage = () => {
               <Flex vertical>
                 <Button
                   icon={<LinkOutlined />}
-                  href="https://t.me/HEMIS_support"
+                  href="https://t.me/LMS_support"
                   type="link"
                   style={{ padding: 0, marginRight: 'auto' }}
                 >{`MY.HEMIS.UZ - Telegram ${toFirstLowerLetter(t('const.group'))}`}</Button>

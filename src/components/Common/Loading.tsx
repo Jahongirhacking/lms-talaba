@@ -5,8 +5,8 @@ import './Loading.scss';
 
 const Loading = () => {
   const hemis: IUniversityInfo = {
-    logo: '/images/hemis-icon.svg',
-    name: 'HEMIS - axborot tizimi',
+    logo: '/images/lms-icon.svg',
+    name: 'LMS',
   };
   const university: IUniversityInfo = getLocalStorage(
     localStorageNames.university

@@ -2,14 +2,13 @@ import {
   BookIconSVG,
   CalendarIconSVG,
   DashboardIconSVG,
-  DocumentIconSVG,
-  FolderIconSVG,
-  HelpIconSVG,
+  DocumentIconSVG, FolderIconSVG, HelpIconSVG,
   LibraryIconSVG,
   LogOutIconSVG,
   MoneyIconSVG,
   PlanIconSVG,
-  SettingIconSVG,
+  RestoreIconSVG,
+  SettingIconSVG
 } from '@/assets/icon';
 import { ReactElement, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -68,28 +67,13 @@ const useNavbarList = () => {
         path: '/dashboard/attendance',
         isPrivatePath: true,
       },
-      {
-        title: (
-          t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
-        )[5],
-        icon: <MoneyIconSVG />,
-        path: '/dashboard/payment',
-      },
 
-      // {
-      //   title: (
-      //     t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
-      //   )[6],
-      //   icon: <RestoreIconSVG />,
-      //   path: '/dashboard/reeducation',
-      // },
       {
         title: (
           t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
-        )[7],
-        icon: <FolderIconSVG />,
-        path: '/dashboard/folders',
-        isPrivatePath: true,
+        )[6],
+        icon: <RestoreIconSVG />,
+        path: '/dashboard/reeducation',
       },
       {
         title: (
@@ -98,6 +82,21 @@ const useNavbarList = () => {
         icon: <LibraryIconSVG />,
         path: '/dashboard/library',
         isPrivatePath: false,
+      },
+      {
+        title: (
+          t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
+        )[5],
+        icon: <MoneyIconSVG />,
+        path: '/dashboard/payment',
+      },
+      {
+        title: (
+          t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
+        )[7],
+        icon: <FolderIconSVG />,
+        path: '/dashboard/folders',
+        isPrivatePath: true,
       },
     ]);
 

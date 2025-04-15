@@ -68,7 +68,7 @@
         "for_communication": "A'loqa uchun",
         "password": "Parol",
         "please": "Iltimos",
-        "academic_parameters": "O‘quv parametrlari",
+        "academic_parameters": "O‘quv jarayon",
         "contract_payment": "Kontrakt to’lovi",
         "student_dormitory": "Talabalar turar joyi",
         "see": "Ko’rish",
@@ -196,9 +196,9 @@
             "button_text": "Davom ettirish"
         },
         "student_form": {
-            "title": "Talaba ID va parolni kiriting",
+            "title": "Kirish",
             "login_label": "Talaba ID",
-            "login_placeholder": "Loginni kiriting",
+            "login_placeholder": "Talaba IDni kiriting",
             "password_label": "Parol",
             "password_placeholder": "Parolni kiriting",
             "remember_text": "Eslab qolish",
@@ -245,15 +245,15 @@
         "notifications_text": "Bildirishnomalar",
         "navbar": {
             "navbarList": [
-                "Dashboard",
+                "Asosiy sahifa",
                 "Dars jadvali",
                 "Fanlar",
-                "O‘quv parametrlari",
+                "O‘quv jarayon",
                 "Davomat",
-                "Moliyaviy to‘lov",
+                "Kontrakt ma'lumotlari",
                 "Qayta o‘qish",
                 "Hujjatlar",
-                "Elektron kutubxona"
+                "Kutubxona"
             ],
             "navbarBottom": [
                 "Sozlamalar",

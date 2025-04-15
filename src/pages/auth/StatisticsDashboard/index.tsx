@@ -32,13 +32,13 @@ const StatisticsDashboard: React.FC = () => {
   const [univer, setUniver] = useState(
     getLocalStorage(localStorageNames.universityApi)
       ? {
-          label: getLocalStorage(localStorageNames?.university)?.name,
-          value: getLocalStorage(localStorageNames.universityApi),
-        }
+        label: getLocalStorage(localStorageNames?.university)?.name,
+        value: getLocalStorage(localStorageNames.universityApi),
+      }
       : {
-          label: 'Hemis Testlash',
-          value: 'https://student.hemis.uz/rest/v1',
-        }
+        label: 'Hemis Testlash',
+        value: 'https://student.hemis.uz/rest/v1',
+      }
   );
   const [univerInfo, setUniverInfo] = useState<any>();
   const [studentsInfo, setStudentsInfo] = useState<any>();
@@ -48,7 +48,7 @@ const StatisticsDashboard: React.FC = () => {
   const { t } = useTranslation();
 
   const hemis: IUniversityInfo = {
-    logo: '/images/hemis-icon.svg',
+    logo: '/images/lms-icon.svg',
     name: 'HEMIS - axborot tizimi',
   };
 
@@ -132,7 +132,7 @@ const StatisticsDashboard: React.FC = () => {
           property="og:description"
           content="OTM kesimi bo'yicha batafsil statistika ma'lumotlari. HEMIS - Oliy ta’lim jarayonlarini boshqarish axborot tizimi. Ushbu tizim Oliy ta’lim muassasalari uchun ma’muriy boshqaruv, o‘quv jarayoni, ilmiy faoliyat, va moliyaviy boshqaruv modullarini taqdim etadi. 226 dan ortiq OTM va 1 milliondan ortiq foydalanuvchilar (talabalar va o‘qituvchilar) tomonidan qo‘llaniladi."
         />
-        <meta property="og:image" content="/images/hemis-icon.svg" />
+        <meta property="og:image" content="/images/lms-icon.svg" />
       </Helmet>
       <Flex vertical className="stat-page">
         <div className="header ">

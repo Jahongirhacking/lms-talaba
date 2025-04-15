@@ -108,17 +108,16 @@ export const Navbar = () => {
 
         <img
           className="small-logo"
-          src="/images/hemis-icon.svg"
-          alt="hemis logo"
+          src="/images/lms-icon.svg"
+          alt="lms logo"
         />
       </Link>
 
       <div className="navbar__list">
         {navbarList.map(item => (
           <Flex
-            className={`navbar__item ${
-              pathLocation.pathname == item.path ? 'navbar__item-active' : ''
-            }`}
+            className={`navbar__item ${pathLocation.pathname == item.path ? 'navbar__item-active' : ''
+              }`}
             gap={8}
             key={item.title}
             // check restricted university click

@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <HelmetProvider>
             <>
               <Helmet>
-                <title>MY.HEMIS.UZ - Barcha talabalar uchun!</title>
+                <title>LMS Talaba</title>
                 <meta
                   name="description"
                   content="HEMIS - Oliy ta’lim jarayonlarini boshqarish axborot tizimi. Ushbu tizim Oliy ta’lim muassasalari uchun ma’muriy boshqaruv, o‘quv jarayoni, ilmiy faoliyat, va moliyaviy boshqaruv modullarini taqdim etadi. 226 dan ortiq OTM va 1 milliondan ortiq foydalanuvchilar (talabalar va o‘qituvchilar) tomonidan qo‘llaniladi."
@@ -33,7 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                   property="og:description"
                   content="HEMIS - Oliy ta’lim jarayonlarini boshqarish axborot tizimi. Ushbu tizim Oliy ta’lim muassasalari uchun ma’muriy boshqaruv, o‘quv jarayoni, ilmiy faoliyat, va moliyaviy boshqaruv modullarini taqdim etadi. 226 dan ortiq OTM va 1 milliondan ortiq foydalanuvchilar (talabalar va o‘qituvchilar) tomonidan qo‘llaniladi."
                 />
-                <meta property="og:image" content="/images/hemis-icon.svg" />
+                <meta property="og:image" content="/images/lms-icon.svg" />
               </Helmet>
               <App />
               <Snowfalling />

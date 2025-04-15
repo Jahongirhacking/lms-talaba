@@ -2,6 +2,10 @@
   padding: 24px;
   background-color: #f5f5f5;
   min-height: 100dvh;
+  background: url('/images/gradient.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 150% 150%;
 
   .ant-divider {
     span {
@@ -71,8 +75,8 @@
     }
 
     & > .flex-center {
-      width: 98%;
-      max-width: 520px;
+      width: 100%;
+      max-width: 352px;
     }
 
     &--steps {
@@ -95,6 +99,18 @@
     &--card {
       width: 100%;
       max-width: 100%;
+
+      h2 {
+        margin-bottom: 8px;
+        text-align: left;
+      }
+
+      span.ant-typography {
+        display: block;
+        margin-bottom: 24px;
+        color: #00000040;
+        font-size: 12pt;
+      }
     }
 
     .linkText {

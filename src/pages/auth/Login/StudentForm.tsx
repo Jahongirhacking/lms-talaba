@@ -1,6 +1,6 @@
 import { ControlledFlowContext } from '@/components/ControlledFlow';
 import { LoadingOutlined, LoginOutlined } from '@ant-design/icons';
-import { Button, Flex, Form, Input } from 'antd';
+import { Button, Flex, Form, Input, Typography } from 'antd';
 import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -18,7 +18,8 @@ const StudentForm = ({ isLoading = false }: { isLoading?: boolean }) => {
 
   return (
     <div className="customBox login__main--card">
-      <h2 className="customBox__title">{t('login.student_form.title')}</h2>
+      <Typography.Title level={2} className="customBox__title">{t('login.student_form.title')}</Typography.Title>
+      <Typography.Text>Iltimos talaba ID si va parolingizni kiriting</Typography.Text>
       <Form
         onFinish={e => e.preventDefault()}
         layout="vertical"

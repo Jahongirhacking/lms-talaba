@@ -55,7 +55,7 @@ const CancelPasswordPage = () => {
           property="og:description"
           content="HEMIS shaxsiy parolingizni qayta tiklash. HEMIS - Oliy ta’lim jarayonlarini boshqarish axborot tizimi. Ushbu tizim Oliy ta’lim muassasalari uchun ma’muriy boshqaruv, o‘quv jarayoni, ilmiy faoliyat, va moliyaviy boshqaruv modullarini taqdim etadi. 226 dan ortiq OTM va 1 milliondan ortiq foydalanuvchilar (talabalar va o‘qituvchilar) tomonidan qo‘llaniladi."
         />
-        <meta property="og:image" content="/images/hemis-icon.svg" />
+        <meta property="og:image" content="/images/lms-icon.svg" />
       </Helmet>
       {!getLocalStorage(localStorageNames.universityApi) ? (
         <Flex
