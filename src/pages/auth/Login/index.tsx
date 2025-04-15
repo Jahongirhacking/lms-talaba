@@ -191,7 +191,7 @@ const LoginPage = () => {
                   href="https://t.me/LMS_support"
                   type="link"
                   style={{ padding: 0, marginRight: 'auto' }}
-                >{`MY.HEMIS.UZ - Telegram ${toFirstLowerLetter(t('const.group'))}`}</Button>
+                >{`LMS - Telegram ${toFirstLowerLetter(t('const.group'))}`}</Button>
                 <Divider />
                 <Button
                   icon={<LinkOutlined />}
