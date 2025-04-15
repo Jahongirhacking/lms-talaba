@@ -23,7 +23,7 @@
 }
 
 @mixin hoveredNavbarItem {
-  background-color: #f1f1f1;
+  background-color: #9fe87033;
   color: #000;
 }
 
@@ -63,7 +63,7 @@
     padding: 8px 24px;
     border-radius: 12px;
     cursor: pointer;
-    color: rgba(#000, 0.45);
+    color: #000;
     user-select: none;
     transition:
       background-color 0.4s ease,
