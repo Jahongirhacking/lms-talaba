@@ -46,12 +46,12 @@ $overallColor: #722ed1;
 }
 
 .attendances__info {
+  margin-top: 24px;
+
   * {
     margin: 0;
     padding: 0;
   }
-
-  margin-top: 24px;
 
   .attendances__active-day {
     background-color: #f5f5f5;

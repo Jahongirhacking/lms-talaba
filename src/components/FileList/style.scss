@@ -4,4 +4,24 @@
   .ant-list-item-action {
     margin-inline-start: 8px !important;
   }
+
+  .ant-list-item-meta {
+    align-items: center !important;
+  }
+
+  .ant-list-item-meta-avatar {
+    min-width: 35px;
+    max-width: 35px;
+    margin-right: 8px !important;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .ant-list-item-meta-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }

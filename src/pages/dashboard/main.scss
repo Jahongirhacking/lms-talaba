@@ -1,4 +1,4 @@
-@import '../../components/Navbar/navbar.scss';
+@use '../../components/Navbar/navbar.scss';
 
 .test-page {
   display: flex;
@@ -446,7 +446,7 @@
       }
 
       .navbar {
-        @include makeNavbar();
+        @include navbar.makeNavbar();
 
         h3 {
           display: block;

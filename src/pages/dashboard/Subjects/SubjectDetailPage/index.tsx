@@ -1,12 +1,19 @@
-import { LeftArrowSVG } from '@/assets/icon';
+import { LeftArrowSVG, TasksListIcon, VideoAndResourcesIcon } from '@/assets/icon';
+import FileList from '@/components/FileList';
 import { RootState } from '@/store/store';
-import { Button, Flex } from 'antd';
-import { useEffect, useRef } from 'react';
+import { Button, Divider, Flex, Segmented, Typography } from 'antd';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import DashboardLayout from '../../components/DashboardLayout';
 import TopicsContainer from './components/TopicsContainer';
+import VideoPlayer from './components/VideoPlayer';
 import './style.scss';
+
+enum OptionValue {
+  Video = 'video',
+  Task = 'task'
+}
 
 const SubjectDetailPage = () => {
   const navigate = useNavigate();
@@ -17,6 +24,11 @@ const SubjectDetailPage = () => {
     (store: RootState) => store.authSlice?.currentSemester
   );
   const prevRefSemesterCode = useRef<string | null>(null);
+  const options = [
+    { label: "Video va resurslar", icon: <VideoAndResourcesIcon />, value: OptionValue.Video },
+    { label: "Topshiriqlar jadvali", icon: <TasksListIcon />, value: OptionValue.Task }
+  ]
+  const [selectedOption, setSelectedOption] = useState(options[0].value);
 
   // useEffect(() => {
   //   if (currentSemester) {
@@ -68,11 +80,17 @@ const SubjectDetailPage = () => {
   return (
     <DashboardLayout
       title={(
-        <Flex gap={16}>
-          <Link to={'/dashboard/subjects'}>
-            <Button icon={<LeftArrowSVG />} shape="circle" />
-          </Link>
-          Ma'lumotlar bazasi
+        <Flex gap={25} justify="space-between" className='details-header' wrap>
+          <Flex gap={16} align='center'>
+            <Link to={'/dashboard/subjects'}>
+              <Button icon={<LeftArrowSVG />} shape="circle" />
+            </Link>
+            <span className='subject-name'>Ma'lumotlar bazasi</span>
+          </Flex>
+          <Segmented
+            options={options}
+            onChange={(value) => setSelectedOption(value)}
+          />
         </Flex>
       )}
       extra={false}
@@ -81,6 +99,37 @@ const SubjectDetailPage = () => {
         <div className="dashboard__outlet--content">
           <Flex gap={24}>
             <TopicsContainer />
+            <Flex vertical className='main-content'>
+              {
+                selectedOption === OptionValue.Video && (
+                  <Flex vertical gap={24}>
+                    <VideoPlayer
+                      controls
+                      title='Kirish.“O‘zbekistonning eng yangi tarixi” o‘quv fanining predmeti, maqsadi va vazifalari, nazariy-metodologik tamoyillari.'
+                      url='/videos/demo.mp4'
+                      info="Excel dasturini noldan tushunishga yordam beradigan amaliy onlayn kurs. 14 ta video-dars davomida siz asosiy funksiyalarni o‘rganasiz: jadval va formulalar bilan ishlash, diagrammalar yaratish, hisobotlar tayyorlash."
+                    />
+                    <Divider style={{ margin: 0 }} />
+                    <Flex vertical gap={20}>
+                      <Typography.Title level={5} style={{ margin: 0 }}>Resurslar</Typography.Title>
+                      <FileList
+                        files={[
+                          { name: "Bootstrap_freymvork_texnologiyasi.docx", size: 5242880, url: '#' },
+                          { name: "Bootstrap_freymvork_texnologiyasi.xlsx", size: 5242880, url: '#' }
+                        ]}
+                      />
+                    </Flex>
+                  </Flex>
+                )
+              }
+              {
+                selectedOption === OptionValue.Task && (
+                  <Flex vertical gap={24}>
+                    Topshiriqlar
+                  </Flex>
+                )
+              }
+            </Flex>
           </Flex>
         </div>
       </section>
