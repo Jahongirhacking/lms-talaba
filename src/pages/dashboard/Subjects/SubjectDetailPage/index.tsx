@@ -99,7 +99,7 @@ const SubjectDetailPage = () => {
     >
       <section className="section dashboard__outlet subject_details_page">
         <div className="dashboard__outlet--content">
-          <Flex gap={24}>
+          <Flex gap={24} className='details-body'>
             <TopicsContainer />
             <Flex vertical className='main-content'>
               {
@@ -132,7 +132,7 @@ const SubjectDetailPage = () => {
               {
                 selectedOption === OptionValue.Task && (
                   <Flex vertical gap={24}>
-                    <Tasks />
+                    <Tasks tasks={{ tasks: [] }} />
                   </Flex>
                 )
               }

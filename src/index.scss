@@ -139,3 +139,27 @@ input[type='password'] {
     }
   }
 }
+
+.main-btn {
+  transition: 0.4s ease;
+
+  &.primary-btn {
+    background-color: #9fe870;
+    border: 1px solid #9fe870;
+    * {
+      color: #163300 !important;
+    }
+    &:hover {
+      background-color: #9fe87099 !important;
+      border-color: #9fe870 !important;
+    }
+  }
+  &.secondary-btn {
+    border: 1px solid #d9d9d9;
+    &:hover {
+      path {
+        fill: #4096ff !important;
+      }
+    }
+  }
+}
