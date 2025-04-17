@@ -53,7 +53,74 @@
         overflow: hidden;
       }
     }
+
+    .chat-container {
+      width: 100%;
+      max-width: 800px;
+
+      .chat-box {
+        width: 100%;
+
+        .message-container {
+          gap: 8px;
+          align-items: flex-end;
+          max-width: 90%;
+          width: fit-content;
+
+          .ant-avatar {
+            min-width: 32px;
+            aspect-ratio: 1 / 1;
+            height: auto !important;
+            img {
+              object-fit: cover;
+            }
+          }
+
+          .chat-message {
+            border-radius: 16px;
+            position: relative;
+            background-color: #f5f5f5;
+            width: 100%;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+
+            .message-text {
+              // Telegram-like greenish color
+              color: #000;
+              padding: 10px 40px 20px 12px; // extra space for time
+              font-size: 14px;
+              line-height: 1.4;
+              max-width: 100%;
+              word-wrap: break-word;
+            }
+
+            .message-time {
+              position: absolute;
+              bottom: 1px;
+              right: 12px;
+              font-size: 12px;
+              line-height: 20px;
+              color: #555;
+              opacity: 0.7;
+            }
+          }
+          &:not(.user-message) {
+            margin-right: auto;
+          }
+
+          &.user-message {
+            margin-left: auto;
+
+            .chat-message {
+              background-color: #e6f4ff;
+            }
+          }
+        }
+      }
+    }
   }
+
   .dashboard__navbar {
     display: none !important;
   }

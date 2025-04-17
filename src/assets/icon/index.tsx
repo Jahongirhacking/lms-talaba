@@ -804,6 +804,35 @@ export const ContractMenuIcon = () => (
   </svg>
 )
 
+export const TimetableMenuIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 2V6M8 2V6" stroke="#B3B8CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M13 4H11C7.22876 4 5.34315 4 4.17157 5.17157C3 6.34315 3 8.22876 3 12V14C3 17.7712 3 19.6569 4.17157 20.8284C5.34315 22 7.22876 22 11 22H13C16.7712 22 18.6569 22 19.8284 20.8284C21 19.6569 21 17.7712 21 14V12C21 8.22876 21 6.34315 19.8284 5.17157C18.6569 4 16.7712 4 13 4Z" stroke="#B3B8CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M3 10H21" stroke="#B3B8CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+)
+
+export const ControlTableMenuIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.5 9V14C3.5 17.7712 3.5 19.6569 4.67157 20.8284C5.84315 22 7.72876 22 11.5 22H12.5C16.2712 22 18.1569 22 19.3284 20.8284C20.5 19.6569 20.5 17.7712 20.5 14V10C20.5 6.22876 20.5 4.34315 19.3284 3.17157C18.1569 2 16.2712 2 12.5 2H12" stroke="#B3B8CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M13.5 17H17.5" stroke="#B3B8CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M13.5 7H17.5" stroke="#B3B8CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M13.5 12H17.5" stroke="#B3B8CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M6.5 16.5C6.5 16.5 7.46758 16.7672 8 18C8 18 9 15 11 14" stroke="#B3B8CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M10 5H3.5M10 5C10 4.15973 7.67332 2.58984 7.08333 2M10 5C10 5.84027 7.67331 7.41016 7.08333 8" stroke="#B3B8CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+)
+
+export const AppropriationMenuIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20.5 10.5V19.5C20.5 19.9659 20.5 20.1989 20.4239 20.3827C20.3224 20.6277 20.1277 20.8224 19.8827 20.9239C19.6989 21 19.4659 21 19 21C18.5341 21 18.3011 21 18.1173 20.9239C17.8723 20.8224 17.6776 20.6277 17.5761 20.3827C17.5 20.1989 17.5 19.9659 17.5 19.5V10.5C17.5 10.0341 17.5 9.80109 17.5761 9.61732C17.6776 9.37229 17.8723 9.17761 18.1173 9.07612C18.3011 9 18.5341 9 19 9C19.4659 9 19.6989 9 19.8827 9.07612C20.1277 9.17761 20.3224 9.37229 20.4239 9.61732C20.5 9.80109 20.5 10.0341 20.5 10.5Z" stroke="#B3B8CC" strokeWidth="1.5" strokeLinejoin="round" />
+    <path d="M16.5 3H19.5V6" stroke="#B3B8CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M19 3.5C19 3.5 15 8.5 4.5 12" stroke="#B3B8CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M13.5 14V19.5C13.5 19.9659 13.5 20.1989 13.4239 20.3827C13.3224 20.6277 13.1277 20.8224 12.8827 20.9239C12.6989 21 12.4659 21 12 21C11.5341 21 11.3011 21 11.1173 20.9239C10.8723 20.8224 10.6776 20.6277 10.5761 20.3827C10.5 20.1989 10.5 19.9659 10.5 19.5V14C10.5 13.5341 10.5 13.3011 10.5761 13.1173C10.6776 12.8723 10.8723 12.6776 11.1173 12.5761C11.3011 12.5 11.5341 12.5 12 12.5C12.4659 12.5 12.6989 12.5 12.8827 12.5761C13.1277 12.6776 13.3224 12.8723 13.4239 13.1173C13.5 13.3011 13.5 13.5341 13.5 14Z" stroke="#B3B8CC" strokeWidth="1.5" strokeLinejoin="round" />
+    <path d="M6.5 16.5V19.5C6.5 19.9659 6.5 20.1989 6.42388 20.3827C6.32239 20.6277 6.12771 20.8224 5.88268 20.9239C5.69891 21 5.46594 21 5 21C4.53406 21 4.30109 21 4.11732 20.9239C3.87229 20.8224 3.67761 20.6277 3.57612 20.3827C3.5 20.1989 3.5 19.9659 3.5 19.5V16.5C3.5 16.0341 3.5 15.8011 3.57612 15.6173C3.67761 15.3723 3.87229 15.1776 4.11732 15.0761C4.30109 15 4.53406 15 5 15C5.46594 15 5.69891 15 5.88268 15.0761C6.12771 15.1776 6.32239 15.3723 6.42388 15.6173C6.5 15.8011 6.5 16.0341 6.5 16.5Z" stroke="#B3B8CC" strokeWidth="1.5" strokeLinejoin="round" />
+  </svg>
+)
+
 export const WatchedVideoIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.3946 6.05301C17.6416 6.54698 17.4413 7.14766 16.9474 7.39465C14.9629 8.3869 12.8039 10.4749 10.9479 12.622C10.5868 13.0398 9.9553 13.0858 9.53748 12.7246C9.11965 12.3634 9.07372 11.7319 9.43488 11.3141C11.3172 9.13647 13.6922 6.78614 16.0529 5.60579C16.5469 5.3588 17.1476 5.55903 17.3946 6.05301Z" fill="#9FE870" />

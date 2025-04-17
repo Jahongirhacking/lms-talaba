@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import DashboardLayout from '../../components/DashboardLayout';
+import Tasks from './_Tasks';
+import Chat from './components/Chat';
 import TopicsContainer from './components/TopicsContainer';
 import VideoPlayer from './components/VideoPlayer';
 import './style.scss';
@@ -119,13 +121,18 @@ const SubjectDetailPage = () => {
                         ]}
                       />
                     </Flex>
+                    <Divider style={{ margin: 0 }} />
+                    <Flex vertical gap={24}>
+                      <Typography.Title level={5} style={{ margin: 0 }}>Chat</Typography.Title>
+                      <Chat />
+                    </Flex>
                   </Flex>
                 )
               }
               {
                 selectedOption === OptionValue.Task && (
                   <Flex vertical gap={24}>
-                    Topshiriqlar
+                    <Tasks />
                   </Flex>
                 )
               }

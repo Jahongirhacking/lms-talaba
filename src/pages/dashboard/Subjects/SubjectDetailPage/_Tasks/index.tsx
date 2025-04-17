@@ -16,7 +16,7 @@ interface ITasksData {
   items: ITaskList[];
 }
 
-const Tasks = ({ tasks: data }: { tasks: ISubject }) => {
+const Tasks = ({ tasks: data }: { tasks?: ISubject }) => {
   const tasks = data?.tasks;
   const now = useSelector((store: RootState) => store.currentTimeSlice);
   const { t } = useTranslation();

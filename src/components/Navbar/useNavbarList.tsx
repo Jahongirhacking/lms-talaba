@@ -1,9 +1,9 @@
 import {
-  BookIconSVG,
-  CalendarIconSVG, ContractMenuIcon, DocumentsMenuIcon, EduProcessMenuIcon, HelpIconSVG, LibraryMenuIcon,
+  BookIconSVG, ContractMenuIcon, DocumentsMenuIcon, EduProcessMenuIcon, HelpIconSVG, LibraryMenuIcon,
   LogOutIconSVG,
   MainMenuIcon, PlanIconSVG,
-  ReEduMenuIcon, SettingIconSVG
+  ReEduMenuIcon, SettingIconSVG,
+  TimetableMenuIcon
 } from '@/assets/icon';
 import { ReactElement, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -34,7 +34,7 @@ const useNavbarList = () => {
         title: (
           t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
         )[1],
-        icon: <CalendarIconSVG />,
+        icon: <TimetableMenuIcon />,
         path: '/dashboard/timetable',
         isPrivatePath: true,
       },
@@ -73,17 +73,17 @@ const useNavbarList = () => {
       {
         title: (
           t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
-        )[8],
-        icon: <LibraryMenuIcon />,
-        path: '/dashboard/library',
-        isPrivatePath: false,
+        )[5],
+        icon: <ContractMenuIcon />,
+        path: '/dashboard/payment',
       },
       {
         title: (
           t('dashboard.navbar.navbarList', { returnObjects: true }) as string[]
-        )[5],
-        icon: <ContractMenuIcon />,
-        path: '/dashboard/payment',
+        )[8],
+        icon: <LibraryMenuIcon />,
+        path: '/dashboard/library',
+        isPrivatePath: false,
       },
       {
         title: (
